@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DKB Grades View</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DKB Grades View</h1>
+        
+        <label for="studentCode">Enter Student Code (Numbers Only):</label>
+        <input type="number" id="studentCode" placeholder="Enter Student Code" required aria-required="true">
+        
+        <button onclick="viewGrade()" aria-label="View Grade">View Grade</button>
+
+        <table id="gradesTable" aria-hidden="true" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Session</th>
+                    <th>Homework</th>
+                    <th>Classwork</th>
+                    <th>Exam</th>
+                    <th>Absent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Student grades will be inserted here -->
+            </tbody>
+        </table>
+
+        <div id="errorMessage" class="error-message" style="display:none;" aria-live="assertive"></div>
+    </div>
+
+    <script src="student_view.js"></script>
+</body>
+</html>
